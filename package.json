@@ -1,0 +1,41 @@
+{
+  "name": "node-template",
+  "version": "0.1.0",
+  "description": "Template for future node projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iandeherdt/node-template.git"
+  },
+  "keywords": [
+    "node",
+    "boilerplate",
+    "template"
+  ],
+  "author": "Ian De Herdt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iandeherdt/node-template/issues"
+  },
+  "homepage": "https://github.com/iandeherdt/node-template#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "boom": "4.0.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "jest": "^21.2.1",
+    "supertest": "^3.0.0"
+  }
+}
