@@ -9,7 +9,21 @@ async function findUserByUserName(username) {
   return user;
 }
 
+async function findUserByFacebookId(facebookId) {
+  const user = await knex('users').where({ facebookId }).first();
+  if (!user) {
+    throw new NotFoundError();
+  }
+  return user;
+}
+
+async function add(user) {
+  return knex.insert(user);
+}
+
 module.exports = {
   findUserByUserName,
+  findUserByFacebookId,
+  add,
 };
 

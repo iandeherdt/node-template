@@ -1,4 +1,5 @@
 const authService = require('../services/auth.service');
+const authHelpers = require('./../helpers/auth.helpers');
 
 async function login(req, res, next) {
   try {
@@ -10,6 +11,18 @@ async function login(req, res, next) {
   }
 }
 
+function redirectFacebook(req, res, next) {
+  try {
+    const userInfo = authHelpers.createTokenInfo(req.user);
+    const token = authHelpers.generateAccessToken(userInfo);
+    // Successful authentication, redirect to success page to pass token.
+    return res.redirect(`/authComplete?token=${token}&id=${req.user.id}&user=${req.user.name}&registered=${!!req.user.registered}`);
+  } catch (ex) {
+    return next(ex);
+  }
+}
+
 module.exports = {
   login,
+  redirectFacebook,
 };
