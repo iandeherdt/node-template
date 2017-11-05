@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: 'postgres://developer:developer@localhost:5432/db_dev',
     debug: false,
     pool: {
       min: 1,
@@ -16,7 +16,7 @@ module.exports = {
   },
   test: {
     client: 'pg',
-    connection: `${process.env.DATABASE_URL}_test`,
+    connection: 'postgres://developer:developer@localhost:5432/db_test',
     migrations: {
       directory: `${__dirname}/server/db/migrations`,
     },
