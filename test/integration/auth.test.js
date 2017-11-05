@@ -19,5 +19,28 @@ describe('auth tests', () => {
       expect(decoded.username).toBe('abc@xyz.com');
       expect(decoded.id).not.toBeNull();
     });
+    it('handle an invalid password', async () => {
+      await request(app)
+        .post('/api/auth/login')
+        .set('Accept', 'application/json')
+        .send({ username: 'abc@xyz.com', password: 'pass12' })
+        .expect(404);
+    });
+
+    it('should handle no password', async () => {
+      await request(app)
+        .post('/api/auth/login')
+        .set('Accept', 'application/json')
+        .send({ email: 'abc@xyz.com', password: '' })
+        .expect(400);
+    });
+
+    it('should handle no username', async () => {
+      request(app)
+        .post('/api/auth/login')
+        .set('Accept', 'application/json')
+        .send({ username: '', password: 'pass123' })
+        .expect(400);
+    });
   });
 });
