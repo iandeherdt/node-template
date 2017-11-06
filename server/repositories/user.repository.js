@@ -9,6 +9,10 @@ async function findUserByUserName(username) {
   return user;
 }
 
+function userExists(username) {
+  return knex('users').where({ username }).first();
+}
+
 async function findUserByFacebookId(facebookId) {
   const user = await knex('users').where({ facebookId }).first();
   if (!user) {
@@ -18,12 +22,13 @@ async function findUserByFacebookId(facebookId) {
 }
 
 async function add(user) {
-  return knex.insert(user);
+  return knex('users').insert(user);
 }
 
 module.exports = {
   findUserByUserName,
   findUserByFacebookId,
   add,
+  userExists,
 };
 

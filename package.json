@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "NODE_ENV=test knex migrate:latest && jest --maxWorkers=1 --forceExit",
+    "test": "NODE_ENV=test jest --maxWorkers=1 --forceExit",
     "lint": "eslint ."
   },
   "repository": {
@@ -34,6 +34,7 @@
     "joi": "12.0.0",
     "jsonwebtoken": "^8.1.0",
     "knex": "^0.13.0",
+    "nodemailer": "^4.3.1",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "pg": "^7.4.0",

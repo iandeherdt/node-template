@@ -7,6 +7,7 @@
     "beforeEach": true,
     "after": true,
     "afterEach": true,
-    "expect": true
+    "expect": true,
+    "spyOn": true
   }
 }

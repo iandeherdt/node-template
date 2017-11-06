@@ -1,4 +1,4 @@
-const app = require('./../../index');
+const app = require('./../../app');
 const request = require('supertest');
 const authHelper = require('./../../server/helpers/auth.helpers');
 const knex = require('../../server/db/connection');
