@@ -36,7 +36,7 @@ describe('auth tests', () => {
     });
 
     it('should handle no username', async () => {
-      request(app)
+      await request(app)
         .post('/api/auth/login')
         .set('Accept', 'application/json')
         .send({ username: '', password: 'pass123' })
